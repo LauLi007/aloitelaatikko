@@ -29,7 +29,7 @@ class Aloitelaatikko
     /**
      * @ORM\Column(type="date")
      */
-    private $kirjauspäivä;
+    private $kirjauspaiva;
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -70,14 +70,14 @@ class Aloitelaatikko
         return $this;
     }
 
-    public function getKirjauspäivä(): ?\DateTimeInterface
+    public function getKirjauspaiva(): ?\DateTimeInterface
     {
-        return $this->kirjauspäivä;
+        return $this->kirjauspaiva;
     }
 
-    public function setKirjauspäivä(\DateTimeInterface $kirjauspäivä): self
+    public function setKirjauspaiva(\DateTimeInterface $kirjauspaiva): self
     {
-        $this->kirjauspäivä = $kirjauspäivä;
+        $this->kirjauspaiva = $kirjauspaiva;
 
         return $this;
     }

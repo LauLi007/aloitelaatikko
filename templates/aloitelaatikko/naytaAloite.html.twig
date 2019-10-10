@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Aloite {% endblock %}
+
+    {% block body %}
+
+    <h1>Aloite</h1>
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Aihe</th>
+      <th scope="col">Kuvaus</th>
+      <th scope="col">Kirjauspäivä</th>
+      <th scope="col">Nimi</th>
+      <th scope="col">Sähköpostiosoite</th>
+      <th scope="col">Toiminnot</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>{{ aloite.id }}</th>
+      <td>{{ aloite.aihe }}</td>
+      <td>{{ aloite.kuvaus }}</td>
+      <td>{{ aloite.kirjauspaiva|date("d/m/Y") }}</td>
+      <td>{{ aloite.nimi }}</td>
+      <td>{{ aloite.email }}</td>
+
+      <td>
+        <button muokkaa-aloite="{{ aloite.id }}" class="btn btn-danger poista-linkki">Muokkaa</button>
+        <button poista-aloite="{{ aloite.id }}" class="btn btn-danger poista-linkki">Poista</button>
+      </td>
+
+    </tr>
+    {% endfor %}
+ </tbody>
+</table>
+    {% endblock %}    
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="js/main.js"></script>
+{% endblock %}
